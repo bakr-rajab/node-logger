@@ -1,11 +1,28 @@
-const info=(...params)=>{
-    console.log(...params)
-}
-const error=(...params)=>{
-    console.log(...params)
-}
+const { createLogger, format, transports } = require("winston");
+ 
+const logLevels = {
+  fatal: 0,
+  error: 1,
+  warn: 2,
+  info: 3,
+  debug: 4,
+  trace: 5,
+};
+ 
+const logger = createLogger({
+  levels: logLevels,
+  format: format.combine(format.timestamp(), format.json()),
+  transports: [new transports.Console()],
+});
+
+// const info=(...params)=>{
+//     console.log(...params)
+// }
+// const error=(...params)=>{
+//     console.log(...params)
+// }
 
 module.exports={
-    info,
-    error
+    logger,
+    // error
 }
