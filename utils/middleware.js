@@ -1,10 +1,27 @@
-const logger = require('./logger')
+const { level } = require('winston')
+const { logger } = require('./logger')
+var client = require('mongoose')
 
-const requestLogger = (request, response, next) => {
-  logger.info('Method:', request.method)
-  logger.info('Path:  ', request.path)
-  logger.info('Body:  ', request.body)
+
+const requestLogger =  (request, response, next) => {
+  logger.info(request.method)
+  let p = request.path.split('/')[2]
+  console.log("99999999", p);
+  logger.info(`"PATH: ", ${request.path}`)
+  logger.info("body : ", request.body)
   logger.info('---')
+
+  try {
+    
+    const db = client.connection.db;
+      db.collection("repooo").insertOne({ req: request.body }, { checkKeys: false });
+    
+  } catch (error) {
+    console.log("555555555555555",error);
+    logger.error(error)
+  }
+
+
   next()
 }
 
@@ -23,6 +40,8 @@ const errorHandler = (error, request, response, next) => {
 
   next(error)
 }
+
+
 
 module.exports = {
   requestLogger,

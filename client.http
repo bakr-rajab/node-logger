@@ -1,13 +1,13 @@
 
 @host =  http://localhost:6000/api/notes
-GET {{host}}/
+GET {{host}}/629f28f4d7169f4d15055981
 
 ### add new 
 POST {{host}}/
 Content-Type: application/json
 
 {
-    "content":"clean code",
+  "content":"best practices111111",
   "date":"2022-06-06",
   "important": true
 }

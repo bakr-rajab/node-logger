@@ -1,6 +1,6 @@
 const app = require('./app') // the actual Express application
 const http = require('http')
-const logger = require('./utils/logger')
+const {logger} = require('./utils/logger')
 const notesRouter = require('./api/notes.router')
 
 

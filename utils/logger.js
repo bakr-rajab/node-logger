@@ -1,5 +1,8 @@
+const winston = require('winston')
 const { createLogger, format, transports } = require("winston");
- 
+const { combine, timestamp, label, prettyPrint, splat, printf } = format;
+// require('express-async-errors');
+
 const logLevels = {
   fatal: 0,
   error: 1,
@@ -8,21 +11,21 @@ const logLevels = {
   debug: 4,
   trace: 5,
 };
- 
+winston.add(new transports.Console({ colorize: true, prettyPrint: true }));
+
 const logger = createLogger({
   levels: logLevels,
-  format: format.combine(format.timestamp(), format.json()),
-  transports: [new transports.Console()],
+  format: combine(
+    timestamp(),
+    prettyPrint()
+  ),
+
+  transports: [
+    new transports.Console({ level: 'info' }),
+    new transports.File({ filename: "outputfile.log", level: 'debug' }),
+  ]
 });
 
-// const info=(...params)=>{
-//     console.log(...params)
-// }
-// const error=(...params)=>{
-//     console.log(...params)
-// }
-
-module.exports={
-    logger,
-    // error
+module.exports = {
+  logger,
 }

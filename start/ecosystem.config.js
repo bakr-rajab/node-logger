@@ -6,7 +6,7 @@ module.exports = {
     env: {
       NODE_ENV: "development",
       PORT : 6000,
-      MONGODB_URI : "mongodb://localhost:27017"
+      MONGODB_URI : "mongodb://localhost:27017/loogss"
     },
     env_test: {
       NODE_ENV: "test",

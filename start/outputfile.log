@@ -1,0 +1,38 @@
+{
+  message: 'connecting to : mongodb://localhost:27017/loogss',
+  level: 'info',
+  timestamp: '2022-06-07T12:00:11.544Z'
+}
+{
+  message: 'Server running on port 6000',
+  level: 'info',
+  timestamp: '2022-06-07T12:00:11.584Z'
+}
+{
+  message: 'connected to MongoDB',
+  level: 'info',
+  timestamp: '2022-06-07T12:00:11.614Z'
+}
+{
+  message: 'POST',
+  level: 'info',
+  timestamp: '2022-06-07T12:00:21.657Z'
+}
+{
+  message: '"PATH: ", /api/notes/',
+  level: 'info',
+  timestamp: '2022-06-07T12:00:21.659Z'
+}
+{
+  content: 'best practices111111',
+  date: '2022-06-06',
+  important: true,
+  level: 'info',
+  message: 'body : ',
+  timestamp: '2022-06-07T12:00:21.660Z'
+}
+{
+  message: '---',
+  level: 'info',
+  timestamp: '2022-06-07T12:00:21.660Z'
+}
