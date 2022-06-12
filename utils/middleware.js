@@ -12,17 +12,22 @@ const requestLogger =  (request, response, next) => {
   logger.info('---')
 
   try {
-    
-    const db = client.connection.db;
-      db.collection("repooo").insertOne({ req: request.body }, { checkKeys: false });
+    if(request.method != 'GET'){
+      let logg={};
+      logg=request.body;
+      logg.method=request.method;
+      logg.path=request.path;
+      console.log(logg);
+      const db = client.connection.db;
+        db.collection(request.path.split('/')[2]).insertOne({req:logg}, { checkKeys: false });
+    }
+    next()
     
   } catch (error) {
     console.log("555555555555555",error);
     logger.error(error)
+    next()
   }
-
-
-  next()
 }
 
 const unknownEndpoint = (request, response) => {
@@ -40,9 +45,6 @@ const errorHandler = (error, request, response, next) => {
 
   next(error)
 }
-
-
-
 module.exports = {
   requestLogger,
   unknownEndpoint,

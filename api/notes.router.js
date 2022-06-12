@@ -3,7 +3,7 @@ const Note = require('../models/note')
 
 notesRouter.get('/', (request, response) => {
   Note.find({}).then(notes => {
-    response.json(notes)
+    response.status(200).json(notes)
   })
 })
 
@@ -11,7 +11,7 @@ notesRouter.get('/:id', (request, response, next) => {
   Note.findById(request.params.id)
     .then(note => {
       if (note) {
-        response.json(note)
+        response.status(200).json(note)
       } else {
         response.status(404).end()
       }
@@ -30,7 +30,7 @@ notesRouter.post('/', (request, response, next) => {
 
   note.save()
     .then(savedNote => {
-      response.json(savedNote)
+      response.status(200).json(savedNote)
     })
     .catch(error => next(error))
 })
