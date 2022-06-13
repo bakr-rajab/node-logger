@@ -1,0 +1,45 @@
+{
+  message: 'connecting to : undefined',
+  level: 'info',
+  timestamp: '2022-06-12T22:10:53.847Z'
+}
+{
+  message: 'Server running on port undefined',
+  level: 'info',
+  timestamp: '2022-06-12T22:10:53.858Z'
+}
+{
+  message: 'error connecting to MongoDB:The `uri` parameter to `openUri()` must be a string, got "undefined". Make sure the first parameter to `mongoose.connect()` or `mongoose.createConnection()` is a string.',
+  level: 'error',
+  timestamp: '2022-06-12T22:10:53.858Z'
+}
+{
+  message: 'connecting to : undefined',
+  level: 'info',
+  timestamp: '2022-06-13T16:56:13.700Z'
+}
+{
+  message: 'error connecting to MongoDB:The `uri` parameter to `openUri()` must be a string, got "undefined". Make sure the first parameter to `mongoose.connect()` or `mongoose.createConnection()` is a string.',
+  level: 'error',
+  timestamp: '2022-06-13T16:56:13.710Z'
+}
+{
+  message: 'connecting to : undefined',
+  level: 'info',
+  timestamp: '2022-06-13T16:56:36.134Z'
+}
+{
+  message: 'error connecting to MongoDB:The `uri` parameter to `openUri()` must be a string, got "undefined". Make sure the first parameter to `mongoose.connect()` or `mongoose.createConnection()` is a string.',
+  level: 'error',
+  timestamp: '2022-06-13T16:56:36.142Z'
+}
+{
+  message: 'connecting to : undefined',
+  level: 'info',
+  timestamp: '2022-06-13T16:56:53.929Z'
+}
+{
+  message: 'error connecting to MongoDB:The `uri` parameter to `openUri()` must be a string, got "undefined". Make sure the first parameter to `mongoose.connect()` or `mongoose.createConnection()` is a string.',
+  level: 'error',
+  timestamp: '2022-06-13T16:56:53.936Z'
+}

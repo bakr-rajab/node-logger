@@ -1,6 +1,7 @@
 
 @host =  http://localhost:6000/api/notes
-GET {{host}}/62a508f95ca78b460cfb3923
+###
+GET {{host}}/a508f95ca78b460cfb3923/wwe
 
 ### add new 
 POST {{host}}/
