@@ -31,7 +31,8 @@ const requestLogger =  (request, response, next) => {
 }
 
 const unknownEndpoint = (request, response, next) => {
-  console.log("55555555555552222255");
+  
+  console.log("unknownEndpoint 55555555555552222255");
   // response.status(404).send({ error: 'unknown endpoint' })
   const err=new Error(`cant find >>>> ${request.originalUrl} `)
   err.statusCode= 404;
@@ -40,13 +41,18 @@ const unknownEndpoint = (request, response, next) => {
 }
 
 const errorHandler = (error, request, response, next) => {
+  console.log("errorHandler error",error);
+  console.log("errorHandler request",request.body);
+  console.log("errorHandler response",response);
+  console.log("errorHandler next",next);
+
   let err={};
   err.message = error.message;
   err.statusCode=error.statusCode || 500;
   err.status=err.status || 'error'
   logger.error(err)
-
-  response.status(err.statusCode).json({message:err.message,status:error.status})
+  response.setHeader('Cache-Control', 'no-cache');
+  // response.status(err.statusCode).json({message:err.message,status:error.status})
   // if (error.name === 'CastError') {
   //   return response.status(400).send({ error: 'malformatted id' })
   // } else if (error.name === 'ValidationError') {

@@ -6,7 +6,7 @@ const notesRouter = require('./api/notes.router')
 
 const server = http.createServer(app)
 
-app.use('/api/notes', notesRouter)
+// app.use('/api/notes', notesRouter)
 
 
 

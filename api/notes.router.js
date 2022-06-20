@@ -53,7 +53,9 @@ notesRouter.put('/:id', (request, response, next) => {
 
   Note.findByIdAndUpdate(request.params.id, note, { new: true })
     .then(updatedNote => {
-      response.json(updatedNote)
+      next(updatedNote)
+      console.log("777777777777",updatedNote);
+      response.send(updatedNote)
     })
     .catch(error => next(error))
 })

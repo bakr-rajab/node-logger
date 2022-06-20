@@ -3,6 +3,9 @@
 ###
 GET {{host}}/a508f95ca78b460cfb3923/wwe
 
+### get all
+GET {{host}}/
+
 ### add new 
 POST {{host}}/
 Content-Type: application/json
@@ -11,4 +14,12 @@ Content-Type: application/json
   "content":"best pppppp 33333",
   "date":"2022-06-06",
   "important": true
+} 
+
+### add new 
+PUT {{host}}/62b082f2e9ad92bf21bbbc04
+Content-Type: application/json
+
+{
+  "important": false
 } 
